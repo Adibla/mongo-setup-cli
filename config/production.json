@@ -1,0 +1,15 @@
+{
+  "db":  {
+    "connection": {
+    },
+    "seeds": {
+      "directory": "./priv/seeds"
+    }
+  },
+  "log": {
+    "base": {
+      "env": "production"
+    },
+    "enabled": false
+  }
+}

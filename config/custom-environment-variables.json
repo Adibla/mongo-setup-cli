@@ -1,0 +1,17 @@
+{
+  "db":  {
+    "connection": {
+      "host": "DB_HOST",
+      "port": "DB_PORT",
+      "user": "DB_USER",
+      "password": "DB_PASS",
+      "database": "DB_NAME"
+    }
+  },
+  "log": {
+    "name": "SERVICE_NAME",
+    "base": {
+      "env": "NODE_ENV"
+    }
+  }
+}

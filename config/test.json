@@ -1,0 +1,21 @@
+{
+  "db":  {
+    "connection": {
+      "host": "db",
+      "user": "root",
+      "password": "root",
+      "database": "app_test"
+    },
+    "seeds": {
+      "directory": "./priv/seeds"
+    }
+  },
+  "log": {
+    "name": "app",
+    "base": {
+      "env": "test"
+    },
+    "enabled": false,
+    "level": 30
+  }
+}

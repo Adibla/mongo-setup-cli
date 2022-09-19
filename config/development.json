@@ -1,0 +1,22 @@
+{
+  "db": {
+    "connection": {
+      "host": "",
+      "port": 27017,
+      "user": "admin",
+      "password": "password",
+      "database": "app"
+    },
+    "seeds": {
+      "directory": "./priv/seeds"
+    }
+  },
+  "log": {
+    "name": "app",
+    "base": {
+      "env": "dev"
+    },
+    "enabled": true,
+    "level": 20
+  }
+}
