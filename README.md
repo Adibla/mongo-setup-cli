@@ -167,7 +167,9 @@ Use this space to show useful examples of how a project can be used. Additional 
 - [x] First draft
 - [x] Add Changelog
 - [x] Add back to top links
+- [ ] Autogenerate seeds data based on schema created
 - [ ] Select default config file based on input in CLI
+- [ ] Generate global package using tmp for store data
 - [ ] Typescript migration
 - [ ] Missing schemas types
 - [ ] Manage errors in flow
