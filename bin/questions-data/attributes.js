@@ -8,7 +8,7 @@ module.exports = [
     type: 'list',
     name: 'attributeType',
     message: 'Enter the attribute type',
-    choices: ["String", "List", "Boolean", "Number", "ObjectId", "Date"]
+    choices: ["String", "List", "Boolean", "Number", "ObjectId", "Date", "Buffer", "Decimal", "Mixed"]
   },
   {
     type: 'list',
@@ -46,6 +46,24 @@ module.exports = [
     when: (answ) => answ.attributeType === 'Number',
   },
   {
+    type: 'list',
+    name: 'choiceRequired',
+    message: 'Does this field need to be required?',
+    choices: ["Yes", "No"],
+  },
+  {
+    type: 'list',
+    name: 'choiceDefault',
+    message: 'Do you want to specify a default value?',
+    choices: ["Yes", "No"],
+  },
+  {
+    type: 'input',
+    name: 'defaultValue',
+    message: 'Enter default value',
+    when: (answ) => answ.choiceDefault === 'Yes',
+  },
+  {
     type: 'number',
     name: 'minValue',
     message: 'Enter min value',
@@ -67,6 +85,6 @@ module.exports = [
   {
     type: 'list',
     name: 'repeat',
-    message: 'Do youn want to create another attribute?',
+    message: 'Do you want to create another attribute?',
     choices: ["Yes", "No"]
   }]

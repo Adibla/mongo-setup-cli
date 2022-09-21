@@ -8,6 +8,6 @@ module.exports = [
     name: "schemaDefinition",
     type: "list",
     message: "How do you want to define your schema?",
-    choices: ["Individually by attribute", "Entering a json (mongoose scheme)"]
+    choices: ["Individually by attribute"]
   }
 ];

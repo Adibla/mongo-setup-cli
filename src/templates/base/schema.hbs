@@ -3,7 +3,7 @@ const {Schema} = require("mongoose");
 
 const {{capitalizeFirst results.schemaName}}Schema = new mongoose.Schema({
   {{#each results.attributes}}
-    {{this.attribute}}: {{attributeFormat this}},
+    {{this.attribute}}: {{{attributeFormat this}}},
   {{/each}}
 });
 

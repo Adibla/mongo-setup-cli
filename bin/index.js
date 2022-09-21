@@ -47,7 +47,7 @@ const askQuestionsSchema = () => {
         attributesGenerated  = previous ? [...attributesGenerated, previous] : [];
         return inquirer.prompt(attributesQuestionsData)
         .then(resp => {
-          if(resp.repeat === 'Si'){
+          if(resp.repeat === 'Yes'){
             return attributesQuestions(resp);
           }
           return Promise.resolve({...ans, attributes: [...attributesGenerated, resp]})
@@ -70,7 +70,7 @@ const askQuestionsData = () => {
 
 const success = filepath => {
   console.log(
-    chalk.white.bgGreen.bold(`Completato!`)
+    chalk.white.bgGreen.bold(`Completed!`)
   );
 };
 
