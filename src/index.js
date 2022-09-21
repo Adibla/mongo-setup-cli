@@ -15,7 +15,7 @@ const start = () => {
     .then(conn => loadAllData(config.db.seeds.directory))
     .then(seedsData => insertAllCollection(models, seedsData))
     .catch(err => {
-      logger.error({data: err})
+      console.error("Mongo connection failed!", err);
     })
     .finally(() => mongoose.connection.close())
 }
