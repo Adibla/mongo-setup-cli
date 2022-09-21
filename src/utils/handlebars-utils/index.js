@@ -2,15 +2,16 @@ const Handlebars = require("handlebars");
 const {capitalizeFirst} = require("../string-utils");
 
 const parseDefaultBasedOnTypes = (def, type) => {
-  // ["String", "List", "Boolean", "Number", "ObjectId", "Date", "Buffer", "Decimal", "Mixed"]
-
-  //TODO: check and map missing types
+  /* ["String", "List", "Boolean", "Number", "ObjectId", "Date", "Buffer", "Decimal", "Mixed"]
+   * TODO: check and map missing types
+   */
   const mapTypes = {
-    "String": (val) => val+'',
+    "String": (val) => `'${val}'`,
     "default": (val) => val
   }
 
-  return mapTypes[type](def) || mapTypes['default'](def);
+  const matched = mapTypes[type] || mapTypes['default'];
+  return matched(def);
 }
 
 const registerCustomHelpers = () => {
