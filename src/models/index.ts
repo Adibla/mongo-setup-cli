@@ -1,7 +1,7 @@
 const User = require('./user')
 //{{{requiredSchema}}}
 
-module.exports = {
+export {
   User,
 //{{nameSchema}}
 }

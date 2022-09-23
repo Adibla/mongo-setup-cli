@@ -1,4 +1,4 @@
-module.exports = [
+const schemaQuestionsData = [
   {
     name: "schemaName",
     type: "input",
@@ -11,3 +11,7 @@ module.exports = [
     choices: ["Individually by attribute"]
   }
 ];
+
+export {
+  schemaQuestionsData
+}

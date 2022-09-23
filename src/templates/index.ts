@@ -1,12 +1,13 @@
-const fs = require('fs');
-const Handlebars = require('handlebars');
-const handlebarsHelpers = require('handlebars-helpers');
+import * as fs from "fs";
 
-const { capitalizeFirst } = require("../utils/string-utils");
-const { registerCustomHelpers } = require('../utils/handlebars-utils');
+import * as Handlebars from "handlebars";
+import * as handlebarsHelpers from "handlebars-helpers";
+
+import { capitalizeFirst } from "../utils/string-utils";
+import { registerCustomHelpers } from "../utils/handlebars-utils";
 
 registerCustomHelpers();
-handlebarsHelpers();
+handlebarsHelpers.default();
 
 const generateSchemaFromResults = async (results) => {
   return fs.promises.readFile(__dirname+"/base/schema.hbs")
@@ -29,6 +30,6 @@ const generateSchemaFromResults = async (results) => {
 
 }
 
-module.exports = {
+export {
   generateSchemaFromResults
 }

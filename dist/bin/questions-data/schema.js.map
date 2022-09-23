@@ -1,0 +1,1 @@
+{"version":3,"file":"schema.js","sourceRoot":"","sources":["../../../bin/questions-data/schema.ts"],"names":[],"mappings":";;;AAAA,MAAM,mBAAmB,GAAG;IAC1B;QACE,IAAI,EAAE,YAAY;QAClB,IAAI,EAAE,OAAO;QACb,OAAO,EAAE,qDAAqD;KAC/D;IACD;QACE,IAAI,EAAE,kBAAkB;QACxB,IAAI,EAAE,MAAM;QACZ,OAAO,EAAE,wCAAwC;QACjD,OAAO,EAAE,CAAC,2BAA2B,CAAC;KACvC;CACF,CAAC;AAGA,kDAAmB"}

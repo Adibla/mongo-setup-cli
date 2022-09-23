@@ -1,4 +1,4 @@
-module.exports = [
+const attributesQuestionsData = [
   {
     type: 'input',
     name: 'attribute',
@@ -88,3 +88,4 @@ module.exports = [
     message: 'Do you want to create another attribute?',
     choices: ["Yes", "No"]
   }]
+export { attributesQuestionsData }

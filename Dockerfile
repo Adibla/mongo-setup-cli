@@ -16,4 +16,4 @@ COPY src src
 COPY bin bin
 COPY .husky .husky
 
-CMD ["node", "bin/index.js"]
+CMD ["node", "bin/index.ts"]

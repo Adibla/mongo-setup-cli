@@ -1,18 +1,18 @@
 #! /usr/local/bin/node
 
-const inquirer = require("inquirer");
-const chalk = require("chalk");
-const figlet = require("figlet");
-const fs = require("fs");
+import * as inquirer from "inquirer";
+import chalk from "chalk";
+import * as figlet from "figlet";
+import * as fs from "fs";
 
-const start = require("../src")
-const {generateSchemaFromResults} = require("../src/templates");
+import * as start from "../src"
+import { generateSchemaFromResults } from "../src/templates";
 
-const startQuestionsData = require('./questions-data/start.js');
-const seedsQuestionsData = require('./questions-data/seeds-qst');
-const schemaQuestionsData = require('./questions-data/schema');
-const attributesQuestionsData = require('./questions-data/attributes');
-const jsonDefinitionQuestionsData = require('./questions-data/json-definition');
+import { startQuestionsData } from "./questions-data/start";
+import { seedsQuestionsData } from "./questions-data/seeds-qst";
+import { schemaQuestionsData } from "./questions-data/schema";
+import { attributesQuestionsData } from "./questions-data/attributes";
+import { jsonDefinitionQuestionsData } from "./questions-data/json-definition";
 
 const init = () => {
   console.log(
@@ -29,7 +29,7 @@ const askQuestions = () => {
   return inquirer.prompt(startQuestionsData);
 };
 
-const askQuestionsSeeds = async (previousResults, askForSeedName) => {
+const askQuestionsSeeds = async (previousResults?: any, askForSeedName?: boolean) => {
   const qst = seedsQuestionsData(askForSeedName)
   return inquirer.prompt(qst)
     .then(result => {
@@ -41,9 +41,9 @@ const askQuestionsSeeds = async (previousResults, askForSeedName) => {
 const askQuestionsSchema = () => {
   return inquirer.prompt(schemaQuestionsData)
     .then(ans => {
-      let attributesGenerated = [];
+      let attributesGenerated: any = [];
 
-      const attributesQuestions = (previous) => {
+      const attributesQuestions: any = (previous) => {
         attributesGenerated  = previous ? [...attributesGenerated, previous] : [];
         return inquirer.prompt(attributesQuestionsData)
         .then(resp => {
@@ -68,7 +68,7 @@ const askQuestionsData = () => {
   return askQuestionsSeeds({}, true)
 };
 
-const success = filepath => {
+const success = () => {
   console.log(
     chalk.white.bgGreen.bold(`Completed!`)
   );
@@ -88,12 +88,12 @@ const run = async () => {
 
   const mappedResult = {
     load: () => {},
-    schema: (results) => generateSchemaFromResults(results),
+    schema: (results: any) => generateSchemaFromResults(results),
     data: () => {},
-    default: () => {},
+    default: (results) => {},
   }
 
-  let result = await mappedActions[answers.actionToDo]();
+  let result: any = await mappedActions[answers.actionToDo]();
 
   const executionWithResult = await mappedResult[answers.actionToDo](result) || await mappedResult['default'](result)
 

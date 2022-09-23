@@ -13,6 +13,7 @@
   "author": "Andrea Di Blasi",
   "license": "MIT",
   "dependencies": {
+    "@types/handlebars-helpers": "^0.5.3",
     "chalk": "^4.1.2",
     "commitizen": "^4.2.5",
     "config": "^3.3.8",
@@ -25,7 +26,8 @@
     "knex": "^2.3.0",
     "mongoose": "^6.6.0",
     "pino": "^8.5.0",
-    "shelljs": "^0.8.5"
+    "shelljs": "^0.8.5",
+    "typescript": "^4.8.3"
   },
   "config": {
     "commitizen": {
@@ -34,6 +36,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0"
+    "@commitlint/config-conventional": "^17.1.0",
+    "@types/node": "^18.7.19"
   }
 }

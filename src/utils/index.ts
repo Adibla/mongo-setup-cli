@@ -1,7 +1,4 @@
-const config = require('config');
-const logger = require('pino')(config.log);
-
-const fs = require('fs');
+import * as fs from "fs";
 
 const _mapDirContentKey = async (dirContent, dirPath) => {
     const mappedJsonFile = dirContent.map(file => {
@@ -46,7 +43,7 @@ const clearAllCollection = async (models) => {
     return Promise.all(deletePromises);
 }
 
-module.exports = {
+export {
     insertData,
     insertAllCollection,
     clearAllCollection,

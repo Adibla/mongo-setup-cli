@@ -1,5 +1,6 @@
-const Handlebars = require("handlebars");
-const {capitalizeFirst} = require("../string-utils");
+import * as Handlebars from "handlebars";
+
+import { capitalizeFirst } from "../string-utils";
 
 const parseDefaultBasedOnTypes = (def, type) => {
   /* ["String", "List", "Boolean", "Number", "ObjectId", "Date", "Buffer", "Decimal", "Mixed"]
@@ -40,4 +41,4 @@ const registerCustomHelpers = () => {
   });
 }
 
-module.exports = { registerCustomHelpers }
+export { registerCustomHelpers }

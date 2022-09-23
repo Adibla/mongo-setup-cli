@@ -1,4 +1,4 @@
-module.exports = (askForSeedName) => [
+const seedsQuestionsData = (askForSeedName) => [
   {
     "name": "choiceSaveSeed",
     "type": "list",
@@ -19,3 +19,7 @@ module.exports = (askForSeedName) => [
     "message": "Save the json respecting the schema attributes"
   },
 ]
+
+export {
+  seedsQuestionsData
+}

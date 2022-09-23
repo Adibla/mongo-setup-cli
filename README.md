@@ -141,7 +141,7 @@ OTHERS
   export SERVICE_NAME="test" //for logging
    ```
 
-Use the CLI (with npm installation) or execute file in projectDir/bin/index.js using node
+Use the CLI (with npm installation) or execute file in projectDir/bin/index.ts using node
    ```sh
    mongo-setup-cli
    ```
