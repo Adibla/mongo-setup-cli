@@ -14,6 +14,7 @@ const schemaQuestionsData = require('./questions-data/schema');
 const attributesQuestionsData = require('./questions-data/attributes');
 const jsonDefinitionQuestionsData = require('./questions-data/json-definition');
 
+const { autoGenSeed } = require('../src/utils/faker-utils');
 const init = () => {
   console.log(
     chalk.green(
@@ -32,6 +33,16 @@ const askQuestions = () => {
 const askQuestionsSeeds = async (previousResults, askForSeedName) => {
   const qst = seedsQuestionsData(askForSeedName)
   return inquirer.prompt(qst)
+    .then(e => {
+      return autoGenSeed(previousResults)
+        .then(res => {
+          return Promise.resolve({
+            ...e,
+            seedToSave: res
+          })
+        })
+
+    })
     .then(result => {
       let filename = previousResults.schemaName||result.schemaName
       return result.seedToSave ? fs.promises.writeFile("./priv/seeds/"+filename+".json", result.seedToSave) : true

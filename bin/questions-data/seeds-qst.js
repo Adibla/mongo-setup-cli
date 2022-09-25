@@ -7,6 +7,13 @@ module.exports = (askForSeedName) => [
     "choices": ["Yes", "No"]
   },
   {
+    "name": "choiceAutoGenSeed",
+    "type": "list",
+    "when": (ans) => !askForSeedName && ans.choiceSaveSeed === 'Yes',
+    "message": "Do you want to autogenerate new data for the created schema?",
+    "choices": ["Yes", "No"]
+  },
+  {
     "name": "schemaName",
     "type": "string",
     "when": (ans) => askForSeedName,
@@ -15,7 +22,7 @@ module.exports = (askForSeedName) => [
   {
     "name": "seedToSave",
     "type": "editor",
-    "when": (answ) => answ.choiceSaveSeed === 'Yes' || askForSeedName,
+    "when": (answ) => (answ.choiceSaveSeed === 'Yes' || askForSeedName) && answ.choiceSaveSeed === 'No',
     "message": "Save the json respecting the schema attributes"
   },
 ]
